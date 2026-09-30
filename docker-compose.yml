@@ -1,0 +1,13 @@
+services:
+  frontend:
+    build: .
+    container_name: bicicleteria-front
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./src:/app/src
+      - ./index.html:/app/index.html
+    environment:
+      - VITE_API_URL=http://localhost:5147/api
+    stdin_open: true
+    tty: true
